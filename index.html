@@ -1,58 +1,96 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+	<meta charset="UTF-8">
+	<title>我的世外桃源</title>
+	<script>
+    	var t = null;
+    	t = setTimeout(time,1000);
+    function time()
+    {
+       clearTimeout(t);
+       dt = new Date();
+       var hh=dt.getHours();
+       if(hh<10) hh = '0' + hh;
+       var mm=dt.getMinutes();
+       if(mm<10) mm = '0' + mm;
+       var ss=dt.getSeconds();
+       if(ss<10) ss = '0' + ss;
+       document.getElementById("timeShow").innerHTML =  hh+":"+mm+":"+ss ;
+       t = setTimeout(time,1000);              
+    } 
+    </script>
+	<style>
+	html { height: 100%; }
+	body { height: 100%; min-height: 100%; background: #333; color: #fff; padding: 0; margin: 0; font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	#background, #background li { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: transparent; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+	#background { z-index: -1; }
+	#background { margin: 0; padding: 0; }
+	#background li { background-color: transparent; background-size: cover; background-position: center center; background-repeat: no-repeat; opacity: 0; }
+	#center { display: block; position: absolute; top: 36%;  width: 100%; text-align: center; }
+	h1 {font-size: 10em; margin: 0; padding: 0; margin-top: -20px;}
+	</style>
+</head>
+<body>
+	<ul id="background">
+	<li style="opacity: 1; background-image: url(./images/background.png);"></li>
+	</ul>
+	<div id="center">
+	<h1 id="timeShow"></h1>
+	<h2><script>
+<!--
+var health_message_lyvnee="";
+day = new Date( );
+hr = day.getHours( );
+if (( hr >= 0 ) && (hr <= 1 ))
+health_message_lyvnee="0点~1点：进入睡眠状态，充分恢复体能。"
+if (( hr >= 1 ) && (hr <= 2 ))
+health_message_lyvnee="1点~2点：人体进入浅睡眠阶段，易醒，对痛觉特别敏感。"
+if (( hr >= 2 ) && (hr <= 3 ))
+health_message_lyvnee=" 体内大部分器官处于一天中工作最慢的时刻。肝脏紧张地工作，为人体排毒。"
+if (( hr >= 3 ) && (hr <= 4 ))
+health_message_lyvnee="3点~4点：全身处于休息状态，肌肉完全放松。"
+if (( hr >= 4 ) && (hr <= 5 ))
+health_message_lyvnee="4点~5点：血压最低，人体脑部供血最少。所以，此时老年人容易发生心脑血管意外。"
+if (( hr >= 5 ) && (hr <= 6 ))
+health_message_lyvnee="5点~6点：经历了一定时间的睡眠，人体得到了充分休息。此时起床，显得精神饱满。"
+if (( hr >= 6 ) && (hr <= 7 ))
+health_message_lyvnee="6点~7点：血压开始升高，心跳也逐渐加快。"
+if (( hr >= 7 ) && (hr <= 8 ))
+health_message_lyvnee="7点~8点：体温开始上升，人体免疫力最强。"
+if (( hr >= 8 ) && (hr <= 9 ))
+health_message_lyvnee="8点~9点：皮肤有毒物质排除殆尽，性激素含量最高。"
+if (( hr >= 9 ) && (hr <= 10 ))
+health_message_lyvnee="9点~10点：皮肤痛觉降低。此时是就医注射的好时机。"
+if (( hr >= 10 ) && (hr <= 11 ))
+health_message_lyvnee="10点~11点：精力充沛，最适宜工作。"
+if (( hr >= 11 ) && (hr <= 12 ))
+health_message_lyvnee="11点~12点：精力最旺盛，人体不易感觉疲劳。"
+if (( hr >= 12 ) && (hr <= 13 ))
+health_message_lyvnee="12点~13点：经历了一个上午的工作，人体需要休息。"
+if (( hr >= 13 ) && (hr <= 14 ))
+health_message_lyvnee="13点~14点：胃液分泌最多，胃肠加紧工作，适宜进餐，稍感疲乏，需要短时间的休息。"
+if (( hr >= 14 ) && (hr <= 15 ))
+health_message_lyvnee="14点~15点：人体应激能力下降，全身反应迟钝。"
+if (( hr >= 15 ) && (hr <= 16 ))
+health_message_lyvnee="15点~16点：体温最高，工作能力开始恢复。"
+if (( hr >= 16 ) && (hr <= 17 ))
+health_message_lyvnee="16点~17点：血糖升高，脸部最红。"
+if (( hr >= 17 ) && (hr <= 18 ))
+health_message_lyvnee="17点~18点：工作效率最高，肺部呼吸运动最活跃，适宜进行体育锻炼。"
+if (( hr >= 18 ) && (hr <= 19 ))
+health_message_lyvnee="18点~19点：人体痛觉再度降低。"
+if (( hr >= 19 ) && (hr <= 20 ))
+health_message_lyvnee="19点~20点：血压略有升高。此时，人们情绪最不稳定。"
+if (( hr >= 20 ) && (hr <= 21 ))
+health_message_lyvnee="20点~21点：记忆力最强，大脑反应异常迅速。"
+if (( hr >= 21 ) && (hr <= 22 ))
+health_message_lyvnee="21点~22点：脑神经反应活跃，适宜学习和记忆。"
+if (( hr >= 22 ) && (hr <= 23 ))
+health_message_lyvnee="22点~23点：呼吸开始减慢，体温逐渐下降。"
+if (( hr >= 23 ) && (hr <= 24 ))
+health_message_lyvnee="23点~24点：机体功能处于休息状态，一天的疲劳开始缓解。"
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>Lyvnee by Lyvnee</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Lyvnee</h1>
-        <h2></h2>
-
-        <section id="downloads">
-          <a href="https://github.com/Lyvnee" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
-
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    
-  </body>
+document.write(health_message_lyvnee)
+//--->
+</script></h2></div>
 </html>
